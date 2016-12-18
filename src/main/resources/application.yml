@@ -1,0 +1,21 @@
+zuul:
+  routes:
+    cloud-hello: 
+        path: /hello-message/**
+        strip-prefix: false
+    
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka
+            
+spring:
+    application:
+        name: Zuul-Server
+    zipkin: 
+        baseUrl: http://localhost:9411/
+    sleuth:
+        sampler:
+            percentage: 100.0
+        
+        
